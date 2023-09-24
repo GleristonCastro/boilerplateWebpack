@@ -1,0 +1,8 @@
+@import '~bootstrap';
+
+$bg: beige;
+
+body {
+  background-color: $bg;
+  transition: all 1s;
+}
