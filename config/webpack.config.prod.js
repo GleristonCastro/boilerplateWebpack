@@ -1,9 +1,13 @@
 const path = require('path');
-const miniCssWebpackPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require ('./webpack.config.common');
 const { merge } = require('webpack-merge');
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin');
 const glob = require('glob');
+
+const PATHS = {
+  src: path.join(__dirname, "src"),
+};
 
 const config = {
   mode: 'production',
@@ -18,7 +22,7 @@ const config = {
       {
         test: /\.scss$/i,
         use: [
-          {loader: miniCssWebpackPlugin.loader},
+          {loader: MiniCssExtractPlugin.loader},
           'css-loader',
           {
             loader: "postcss-loader",
@@ -41,11 +45,11 @@ const config = {
     ]
   },
   plugins: [
-    new miniCssWebpackPlugin({
+    new MiniCssExtractPlugin({
       filename: 'assets/css/style.[contenthash].css'
     }),
     new PurgeCSSPlugin({
-      paths: glob.sync(`${path.src}/**/*`,  { nodir: true }),
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
     }),
   ]
 };
