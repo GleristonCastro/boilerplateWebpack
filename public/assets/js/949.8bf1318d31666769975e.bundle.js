@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebpackpractice=self.webpackChunkwebpackpractice||[]).push([[949],{238:(e,t,r)=>{function n(){let e=Array.from(arguments).filter((e=>"number"==typeof e));return e.length?e.reduce(((e,t)=>e+t))/e.length:0}r.d(t,{Z:()=>n})},899:(e,t,r)=>{function n(e,t,r=!0){let n=Math.random()*(t-e+1)+e;return r?parseInt(n):parseFloat(n)}r.d(t,{Z:()=>n})}}]);
